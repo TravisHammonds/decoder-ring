@@ -1,14 +1,5 @@
-const polybius = require("../src/polybius");
+const {polybius} = require("../src/polybius");
 const expect = require("chai").expect;
-/*
-*******Examples**********
-polybius("thinkful"); //> "4432423352125413"
-polybius("Hello world"); //> '3251131343 2543241341'
-
-polybius("3251131343 2543241341", false); //> "hello world"
-polybius("4432423352125413", false); //> "th(i/j)nkful
-polybius("44324233521254134", false); //> false
-*/
 
 describe("polybius", () => {
     it("should return a string when encoding.", () => {
@@ -17,7 +8,7 @@ describe("polybius", () => {
     })
 
     it("should return false if there are not an even number of characters in the string (excluding spaces) when decoding", () => {
-        const actual = polybius("12213", false)
+        const actual = polybius("122134 123", false)
         expect(actual).to.be.false;
     })
 
