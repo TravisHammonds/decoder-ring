@@ -5,6 +5,13 @@
 
 const polybiusModule = (function () {
   // you can add any code you want within this function scope
+  const polybiusArray = [
+    ['A', 'B', 'C', 'D', 'E'],
+    ['F', 'G', 'H', 'I', 'K'], // Note: 'J' is combined with 'I'
+    ['L', 'M', 'N', 'O', 'P'],
+    ['Q', 'R', 'S', 'T', 'U'],
+    ['V', 'W', 'X', 'Y', 'Z']  
+  ];
 
   function polybius(input, encode = true) {
     // your solution code here

@@ -23,7 +23,6 @@ const caesarModule = (function () {
         modifiedInput += alphabet[newIndex];
       }
     }
-
     return modifiedInput;
   }
 
@@ -31,7 +30,5 @@ const caesarModule = (function () {
     caesar,
   };
 })();
-
-console.log(caesarModule.caesar("hello", 7, true))
 
 module.exports = { caesar: caesarModule.caesar };
