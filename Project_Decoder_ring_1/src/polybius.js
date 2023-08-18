@@ -5,6 +5,7 @@
 
 const polybiusModule = (function () {
   // you can add any code you want within this function scope
+  //create a 2D array for easy indexing
   const polybiusArray = [
     ["a", "b", "c", "d", "e"],
     ["f", "g", "h", "i", "k"], // Note: 'J' is combined with 'I'
@@ -15,8 +16,9 @@ const polybiusModule = (function () {
 
   function polybius(input = "", encode = true) {
     //handle errors
-    //encoded input must be even in length
+    //get rid of spaces in input
     let len = input.replace(/\s/g, '').length;
+    //encoded input must be even in length
     if ( len % 2 !== 0 && encode == false) return false;
     // create a response string
     let result = "";
@@ -55,7 +57,7 @@ const polybiusModule = (function () {
         }
         let firstDigit = input[i];
         let secondDigit = input[i + 1];
-        // add the matching letter to the result string and go to next iteration
+        // add the matching letter to the result string and go to next iteration(subtract 1 to revert to original indexing)
         let char = polybiusArray[secondDigit - 1][firstDigit - 1];
         if (char == "i") {
           result += "(i/j)";
@@ -72,6 +74,7 @@ const polybiusModule = (function () {
   };
 })();
 
-console.log(polybiusModule.polybius("122134 123", false))
+console.log(polybiusModule.polybius("message"))
+//=> 23513434112251
 
 module.exports = { polybius: polybiusModule.polybius };

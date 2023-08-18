@@ -35,8 +35,8 @@ describe('caesar', () => {
   });
 
   it('should ignore capital letters', () => {
-    const actual = caesar("HELLO", 4, true)
-    const expected = "lipps";
+    const actual = caesar("Zebra Magazine", 3, true)
+    const expected = "cheud pdjdclqh";
     expect(expected).to.equal(actual);
   });
 
